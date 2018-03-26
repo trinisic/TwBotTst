@@ -4,7 +4,7 @@
 #from selenium.webdriver.chrome.options import Options
 import tweepy
 
-options = Options()
+#options = Options()
 with urllib.request.urlopen("https://www.coinexchange.io/api/v1/getmarketsummary?market_id=748") as urlce:
     data = json.loads(url.read().decode())
 data = json.loads(response.read())
