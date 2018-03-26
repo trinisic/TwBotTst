@@ -14,10 +14,8 @@ response = urllib.urlopen(urlce)
 data = json.loads(response.read())
 print data
 
-bid = formant(data['result']['BidPrice'])
-ask = formant(data['result']['AskPrice'])
-prinf('BidPrice:{}'.format(bid))
-prinf('AskPrice:{}'.format(ask))
+prinf('BidPrice:{}'.format(data['result']['BidPrice']))
+prinf('AskPrice:{}'.format(data['result']['AskPrice']))
 
 # Chromeのパス
 #options.binary_location = '/app/.apt/usr/bin/google-chrome'
