@@ -19,7 +19,7 @@ bid = int(round(bid))
 print('BidPrice: {} sat'.format(bid))
 print('AskPrice: {} sat'.format(ask))
 
-sot = max(data2['SellOrders']['OrderTime'] for OrderTime in data2)
+sot = max(data2['result']['SellOrders']['OrderTime'] for OrderTime in data2)
 print("{}".format(sot))
 #consumer_key        = 'UEb18HBscs2h9Mhpe6KmsCTbz'
 #consumer_secret     = 'r2ByglOgZm326rHXfAAG4J1SiF9KoEraKzMGKAbZFcBIcvQDye'
