@@ -5,9 +5,14 @@
 import tweepy
 
 #options = Options()
-with urllib.request.urlopen("https://www.coinexchange.io/api/v1/getmarketsummary?market_id=748") as urlce:
-    data = json.loads(url.read().decode())
+#with urllib.request.urlopen("https://www.coinexchange.io/api/v1/getmarketsummary?market_id=748") as urlce:
+#    data = json.loads(url.read().decode())
+#data = json.loads(response.read())
+
+urlce = "https://www.coinexchange.io/api/v1/getmarketsummary?market_id=748"
+response = urllib.urlopen(urlce)
 data = json.loads(response.read())
+print data
 
 bid = formant(data['result']['BidPrice'])
 ask = formant(data['result']['AskPrice'])
