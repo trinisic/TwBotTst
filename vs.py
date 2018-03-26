@@ -1,4 +1,5 @@
-﻿import time, urllib, json, datetime
+from datetime import *
+﻿import time, urllib, json
 import tweepy
 
 urlCE1 = "https://www.coinexchange.io/api/v1/getmarketsummary?market_id=748"
