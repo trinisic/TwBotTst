@@ -15,14 +15,16 @@ ask = int(round(ask))
 bid = int(round(bid))
 print('BidPrice: {} sat'.format(bid))
 print('AskPrice: {} sat'.format(ask))
+sot = max(data['SellOrders']['OrderTime'] for OrderTime in data)
+print("{}".format(sot))
+#consumer_key        = 'UEb18HBscs2h9Mhpe6KmsCTbz'
+#consumer_secret     = 'r2ByglOgZm326rHXfAAG4J1SiF9KoEraKzMGKAbZFcBIcvQDye'
+#access_token        = '113384111-05QVgLnhO23Z3cSP7OqjrM8skjzgS96tTncTGecY'
+#access_token_secret = 'if0egdApemMhw64LaLJ8Eh3AOdN5GayOeKFfCdxQitzhQ'
 
-consumer_key        = 'UEb18HBscs2h9Mhpe6KmsCTbz'
-consumer_secret     = 'r2ByglOgZm326rHXfAAG4J1SiF9KoEraKzMGKAbZFcBIcvQDye'
-access_token        = '113384111-05QVgLnhO23Z3cSP7OqjrM8skjzgS96tTncTGecY'
-access_token_secret = 'if0egdApemMhw64LaLJ8Eh3AOdN5GayOeKFfCdxQitzhQ'
-
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth_handler=auth)
+#auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+#auth.set_access_token(access_token, access_token_secret)
+#api = tweepy.API(auth_handler=auth)
 #url = 'https://goo.gl/aUT2E3'
-api.update_status(status = "NANJCOIN\n売: {}sat\nVS\n買: {}sat\n".format(ask, bid))
+#api.update_status(status = "NANJCOIN - 売: {}sat 買: {}sat".format(ask, bid))
+#最も直近に売買成立した買い注文、売り注文の注文時刻
