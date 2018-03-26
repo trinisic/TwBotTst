@@ -13,7 +13,8 @@ urlce = "https://www.coinexchange.io/api/v1/getmarketsummary?market_id=748"
 response = urllib.urlopen(urlce)
 data = json.loads(response.read())
 #print data
-
+bid = data['result']['BidPrice']
+ask = data['result']['AskPrice']
 print('BidPrice:{}'.format(data['result']['BidPrice']))
 print('AskPrice:{}'.format(data['result']['AskPrice']))
 
@@ -39,6 +40,8 @@ ask = float(ask) * 100000000
 bid = float(bid) * 100000000
 ask = int(round(ask))
 bid = int(round(bid))
+print('BidPrice: {} sat'.format(bid))
+print('AskPrice: {} sat'.format(ask))
 
 #consumer_key        = 'UEb18HBscs2h9Mhpe6KmsCTbz'
 #consumer_secret     = 'r2ByglOgZm326rHXfAAG4J1SiF9KoEraKzMGKAbZFcBIcvQDye'
