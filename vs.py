@@ -21,7 +21,7 @@ print('AskPrice: {} sat'.format(ask))
 
 st0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
 int( time.mktime( datetime.strptime( st0, "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
-for st1 in data2['result']['SellOrders']['OrderTime']
+for st1 in data2['result']['SellOrders']['OrderTime']:
 	int( time.mktime( datetime.strptime( st1, "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
 	if st1 >= st0: st0 = st1
 print("{}".format(datetime.fromtimestamp(st0)))
