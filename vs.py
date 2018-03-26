@@ -12,10 +12,10 @@ import tweepy
 urlce = "https://www.coinexchange.io/api/v1/getmarketsummary?market_id=748"
 response = urllib.urlopen(urlce)
 data = json.loads(response.read())
-print data
+#print data
 
-prinf('BidPrice:{}'.format(data['result']['BidPrice']))
-prinf('AskPrice:{}'.format(data['result']['AskPrice']))
+print('BidPrice:{}'.format(data['result']['BidPrice']))
+print('AskPrice:{}'.format(data['result']['AskPrice']))
 
 # Chromeのパス
 #options.binary_location = '/app/.apt/usr/bin/google-chrome'
