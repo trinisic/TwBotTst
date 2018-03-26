@@ -20,10 +20,12 @@ print('BidPrice: {} sat'.format(bid))
 print('AskPrice: {} sat'.format(ask))
 
 st0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
-for data2['result']['SellOrders']['OrderTime'] in data2:
+int( time.mktime( datetime.strptime( st0, "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
+for int( time.mktime( datetime.strptime( data2['result']['SellOrders']['OrderTime'] , "%Y-%m-%d %H:%M:%S" ).timetuple() ) )in data2
     st1 = data2['result']['SellOrders']['OrderTime']
+    int( time.mktime( datetime.strptime( st1, "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
     if st1 >= st0: st0 = st1
-print("{}".format(st0))
+print("{}".format(datetime.fromtimestamp(st0)))
 #consumer_key        = 'UEb18HBscs2h9Mhpe6KmsCTbz'
 #consumer_secret     = 'r2ByglOgZm326rHXfAAG4J1SiF9KoEraKzMGKAbZFcBIcvQDye'
 #access_token        = '113384111-05QVgLnhO23Z3cSP7OqjrM8skjzgS96tTncTGecY'
