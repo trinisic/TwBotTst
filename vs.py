@@ -1,4 +1,4 @@
-from datetime import *
+from datetime import strptime
 ﻿import time, urllib, json
 import tweepy
 
