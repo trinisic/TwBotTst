@@ -20,9 +20,9 @@ print('BidPrice: {} sat'.format(bid))
 print('AskPrice: {} sat'.format(ask))
 
 st0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
-for data2['result']['SellOrders']['OrderTime'] in data2
-st1 = data2['result']['SellOrders']['OrderTime']
-if st1 >= st0: st0 = st1
+for data2['result']['SellOrders']['OrderTime'] in data2:
+    st1 = data2['result']['SellOrders']['OrderTime']
+    if st1 >= st0: st0 = st1
 print("{}".format(st0))
 #consumer_key        = 'UEb18HBscs2h9Mhpe6KmsCTbz'
 #consumer_secret     = 'r2ByglOgZm326rHXfAAG4J1SiF9KoEraKzMGKAbZFcBIcvQDye'
