@@ -25,6 +25,7 @@ for ind in range(50):
 #    for i in range(len(data2['result']['SellOrders'])):
 #    print("{}".format(data2['result']['SellOrders'][ind]['OrderTime']))
     st1 = data2['result']['SellOrders'][ind]['OrderTime']
+    st1 = datetime.datetime.strptime(str(st1), "%Y-%m-%d %H:%M:%S" )
     if st1 > st0: st0 = st1
     ind = ind + 1
 print("{}".format(str(st1)))
