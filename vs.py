@@ -40,8 +40,8 @@ for ind in range(50):
         bt0 = bt1
         bq0 = bq1
     ind = ind + 1
-print("最も古い売り注文時刻:{} {} NANJ（小数点以下切捨）".format(str(st0), sq0))
-print("最も古い買い注文時刻:{} {} NANJ（小数点以下切捨）".format(str(bt0), bq0))
+print("最も古い売り注文時刻:{} {:,} NANJ（小数点以下切捨）".format(str(st0), sq0))
+print("最も古い買い注文時刻:{} {:,} NANJ（小数点以下切捨）".format(str(bt0), bq0))
 #int( time.mktime( datetime.datetime.strptime( str(st0), "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
 #for st1 in data2['result']['SellOrders']['OrderTime']:
 #	int( time.mktime( datetime.datetime.strptime( str(st1), "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
