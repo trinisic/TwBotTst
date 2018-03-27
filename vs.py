@@ -16,6 +16,7 @@ ask = float(ask) * 100000000
 bid = float(bid) * 100000000
 ask = int(round(ask))
 bid = int(round(bid))
+print("\n{}"formant(dateime.dateime.now(pytz.utc)))
 print('BidPrice: {} sat'.format(bid))
 print('AskPrice: {} sat'.format(ask))
 ind = 0
@@ -34,8 +35,8 @@ for ind in range(50):
     if st1 < st0: st0 = st1
     if bt1 < bt0: bt0 = bt1
     ind = ind + 1
-print("{}".format(str(st0)))
-print("{}".format(str(bt0)))
+print("最も古い売り注文時刻:{}".format(str(st0)))
+print("最も古い買い注文時刻:{}".format(str(bt0)))
 #int( time.mktime( datetime.datetime.strptime( str(st0), "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
 #for st1 in data2['result']['SellOrders']['OrderTime']:
 #	int( time.mktime( datetime.datetime.strptime( str(st1), "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
