@@ -19,7 +19,7 @@ bid = int(round(bid))
 print('BidPrice: {} sat'.format(bid))
 print('AskPrice: {} sat'.format(ask))
 
-print("{}".format(data2['result']['SellOrders']['OrderTIme']))
+print("{}".format(data2['result']['SellOrders'][3]))
 #st0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
 #int( time.mktime( datetime.datetime.strptime( str(st0), "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
 #for st1 in data2['result']['SellOrders']['OrderTime']:
