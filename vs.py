@@ -16,7 +16,7 @@ ask = float(ask) * 100000000
 bid = float(bid) * 100000000
 ask = int(round(ask))
 bid = int(round(bid))
-print("\n{}".format(dateime.dateime.now(pytz.utc)))
+print("\n{}".format(datetime.datetime.now(pytz.utc)))
 print('BidPrice: {} sat'.format(bid))
 print('AskPrice: {} sat'.format(ask))
 ind = 0
