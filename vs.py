@@ -21,7 +21,7 @@ print('AskPrice: {} sat'.format(ask))
 ind = 0
 for ind in range(50):
     print("{}".format(data2['result']['SellOrders'][ind]))
-    for i in range(len(data2['result']['SellOrders'])):
+#    for i in range(len(data2['result']['SellOrders'])):
             print("{}".format(data2['result']['SellOrders'][ind]['OrderTime']))
     ind = ind + 1
 
