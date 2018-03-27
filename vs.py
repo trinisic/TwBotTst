@@ -19,8 +19,10 @@ bid = int(round(bid))
 print('BidPrice: {} sat'.format(bid))
 print('AskPrice: {} sat'.format(ask))
 ind = 0
-st0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
-bt0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
+#st0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
+#bt0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
+st0 = datetime.datetime.now
+bt0 = datetime.datetime.now
 for ind in range(50):
 #    print("{}".format(data2['result']['SellOrders'][ind]))
 #    for i in range(len(data2['result']['SellOrders'])):
@@ -29,8 +31,8 @@ for ind in range(50):
     st1 = datetime.datetime.strptime(str(st1), "%Y-%m-%d %H:%M:%S" )
     bt1 = data2['result']['BuyOrders'][ind]['OrderTime']
     bt1 = datetime.datetime.strptime(str(bt1), "%Y-%m-%d %H:%M:%S" )
-    if st1 > st0: st0 = st1
-    if bt1 > bt0: bt0 = bt1
+    if st1 < st0: st0 = st1
+    if bt1 < bt0: bt0 = bt1
     ind = ind + 1
 print("{}".format(str(st1)))
 print("{}".format(str(bt1)))
