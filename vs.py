@@ -21,8 +21,8 @@ print('AskPrice: {} sat'.format(ask))
 ind = 0
 #st0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
 #bt0 = datetime.datetime(2017, 3, 16, 0, 0, 0)
-st0 = datetime.datetime.(2020, 12, 31, 0, 0, 0)
-bt0 = datetime.datetime.(2020, 12, 31, 0, 0, 0)
+st0 = datetime.datetime(2020, 12, 31, 0, 0, 0)
+bt0 = datetime.datetime(2020, 12, 31, 0, 0, 0)
 for ind in range(50):
 #    print("{}".format(data2['result']['SellOrders'][ind]))
 #    for i in range(len(data2['result']['SellOrders'])):
