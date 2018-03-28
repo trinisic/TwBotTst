@@ -49,7 +49,7 @@ for ind in range(50):
             st0 = st1
             sq0 = sq1
             ask0 = ask1
-    if bid1 <= bid0:
+    if bid1 >= bid0:
         if bt1 < bt0:
             bt0 = bt1
             bq0 = bq1
