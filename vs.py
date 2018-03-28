@@ -36,10 +36,10 @@ for ind in range(50):
 #    for i in range(len(data2['result']['SellOrders'])):
 #    print("{}".format(data2['result']['SellOrders'][ind]['OrderTime']))
     st1 = data2['result']['SellOrders'][ind]['OrderTime']
-    sq1 = int(rounddown(float(data2['result']['SellOrders'][ind]['Quantity'])))
+    sq1 = int(float(data2['result']['SellOrders'][ind]['Quantity']))
     st1 = datetime.datetime.strptime(str(st1), "%Y-%m-%d %H:%M:%S" )
     bt1 = data2['result']['BuyOrders'][ind]['OrderTime']
-    bq1 = int(rounddown(float(data2['result']['BuyOrders'][ind]['Quantity'])))
+    bq1 = int(float(data2['result']['BuyOrders'][ind]['Quantity']))
     bt1 = datetime.datetime.strptime(str(bt1), "%Y-%m-%d %H:%M:%S" )
     if st1 < st0:
         st0 = st1
