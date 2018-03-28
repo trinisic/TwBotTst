@@ -77,7 +77,7 @@ try:
     api = tweepy.API(auth_handler=auth)
     status = "先頭OB売注文:{} (GMT, JST-9) {} sat {:,} NANJ\n先頭OB買注文:{} (GMT, JST-9) {} sat {:,} NANJ".format(str(st0), ask0, sq0, str(bt0), bid0, bq0)
     print(status)
-    api.update_status(status)
+#    api.update_status(status)
 except ValueError:
     print 'No Status Changes Error'
     sys.exit()
