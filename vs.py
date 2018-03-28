@@ -63,4 +63,4 @@ access_token_secret = 'BElcQ6yKvleFYFAGq8ZBBgEIeDg7VankMid2GAQt3aonN'
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth_handler=auth)
-api.update_status(status = "先頭OB売注文:{} {} sat {:,} NANJ\n先頭OB買注文:{} {} sat {:,} NANJ".format(str(st0), ask, sq0, str(bt0), bid bq0))
+api.update_status(status = "先頭OB売注文:{} {} sat {:,} NANJ\n先頭OB買注文:{} {} sat {:,} NANJ".format(str(st0), ask, sq0, str(bt0), bid, bq0))
