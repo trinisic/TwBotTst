@@ -6,13 +6,13 @@ urlCE2 = "https://www.coinexchange.io/api/v1/getorderbook?market_id=748"
 response1 = urllib.urlopen(urlCE1)
 try:
     data1 = json.loads(response1.read())
-except ValueError
+except ValueError:
     print 'Decoding URL1 JSON has failed'
     sys.exit()
 response2 = urllib.urlopen(urlCE2)
 try:
     data2 = json.loads(response2.read())
-except ValueError
+except ValueError:
     print 'Decoding URL2 JSON has failed'
     sys.exit()
 #print data
