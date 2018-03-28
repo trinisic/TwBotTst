@@ -44,12 +44,12 @@ for ind in range(50):
     bq1 = int(float(data2['result']['BuyOrders'][ind]['Quantity']))
     bid1 = float(data2['result']['BuyOrders'][ind]['Price'])
     bt1 = datetime.datetime.strptime(str(bt1), "%Y-%m-%d %H:%M:%S" )
-    if ask1 < ask0:
+    if ask1 <= ask0:
         if st1 < st0:
             st0 = st1
             sq0 = sq1
             ask0 = ask1
-    if bid1 < bid0:
+    if bid1 <= bid0:
         if bt1 < bt0:
             bt0 = bt1
             bq0 = bq1
