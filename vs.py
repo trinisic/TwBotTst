@@ -27,8 +27,8 @@ print("\n{}".format(datetime.datetime.now()))
 ind = 0
 bq0 = int(float(data2['result']['BuyOrders'][ind]['Quantity']))
 sq0 = int(float(data2['result']['SellOrders'][ind]['Quantity']))
-ask1 = float(data2['result']['SellOrders'][ind]['Price'])
-bid1 = float(data2['result']['BuyOrders'][ind]['Price'])
+ask0 = float(data2['result']['SellOrders'][ind]['Price'])
+bid0 = float(data2['result']['BuyOrders'][ind]['Price'])
 st0 = datetime.datetime(2020, 12, 31, 0, 0, 0)
 bt0 = datetime.datetime(2020, 12, 31, 0, 0, 0)
 
