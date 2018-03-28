@@ -44,14 +44,16 @@ for ind in range(50):
     bq1 = int(float(data2['result']['BuyOrders'][ind]['Quantity']))
     bid1 = float(data2['result']['BuyOrders'][ind]['Price'])
     bt1 = datetime.datetime.strptime(str(bt1), "%Y-%m-%d %H:%M:%S" )
-    if st1 < st0:
-        st0 = st1
-        sq0 = sq1
-        ask0 = ask1
-    if bt1 < bt0:
-        bt0 = bt1
-        bq0 = bq1
-        bid0 = bid1
+    if ask1 < ask0:
+        if st1 < st0:
+            st0 = st1
+            sq0 = sq1
+            ask0 = ask1
+    if bid1 < bid0:
+        if bt1 < bt0:
+            bt0 = bt1
+            bq0 = bq1
+            bid0 = bid1
     ind = ind + 1
 #print("先頭OB売注文:{} {:,} NANJ".format(str(st0), sq0))
 #print("先頭OB買注文:{} {:,} NANJ".format(str(bt0), bq0))
