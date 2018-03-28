@@ -1,12 +1,20 @@
-﻿import time, urllib, json, datetime
+﻿import time, urllib, json, datetime, sys
 import tweepy
 
 urlCE1 = "https://www.coinexchange.io/api/v1/getmarketsummary?market_id=748"
 urlCE2 = "https://www.coinexchange.io/api/v1/getorderbook?market_id=748"
 response1 = urllib.urlopen(urlCE1)
-data1 = json.loads(response1.read())
+try:
+    data1 = json.loads(response1.read())
+except ValueError
+    print 'Decoding URL1 JSON has failed'
+    sys.exit()
 response2 = urllib.urlopen(urlCE2)
-data2 = json.loads(response2.read())
+try:
+    data2 = json.loads(response2.read())
+except ValueError
+    print 'Decoding URL2 JSON has failed'
+    sys.exit()
 #print data
 bid = data1['result']['BidPrice']
 ask = data1['result']['AskPrice']
@@ -28,10 +36,10 @@ for ind in range(50):
 #    for i in range(len(data2['result']['SellOrders'])):
 #    print("{}".format(data2['result']['SellOrders'][ind]['OrderTime']))
     st1 = data2['result']['SellOrders'][ind]['OrderTime']
-    sq1 = int(round(float(data2['result']['SellOrders'][ind]['Quantity'])))
+    sq1 = int(rounddown(float(data2['result']['SellOrders'][ind]['Quantity'])))
     st1 = datetime.datetime.strptime(str(st1), "%Y-%m-%d %H:%M:%S" )
     bt1 = data2['result']['BuyOrders'][ind]['OrderTime']
-    bq1 = int(round(float(data2['result']['BuyOrders'][ind]['Quantity'])))
+    bq1 = int(rounddown(float(data2['result']['BuyOrders'][ind]['Quantity'])))
     bt1 = datetime.datetime.strptime(str(bt1), "%Y-%m-%d %H:%M:%S" )
     if st1 < st0:
         st0 = st1
@@ -40,21 +48,19 @@ for ind in range(50):
         bt0 = bt1
         bq0 = bq1
     ind = ind + 1
-print("最も古い売り注文時刻:{} {:,} NANJ（小数点以下切捨）".format(str(st0), sq0))
-print("最も古い買い注文時刻:{} {:,} NANJ（小数点以下切捨）".format(str(bt0), bq0))
+print("先頭OB売注文:{} {:,} NANJ".format(str(st0), sq0))
+print("先頭OB買注文:{} {:,} NANJ".format(str(bt0), bq0))
 #int( time.mktime( datetime.datetime.strptime( str(st0), "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
 #for st1 in data2['result']['SellOrders']['OrderTime']:
 #	int( time.mktime( datetime.datetime.strptime( str(st1), "%Y-%m-%d %H:%M:%S" ).timetuple() ) )
 #	if st1 >= st0: st0 = st1
 #print("{}".format(datetime.fromtimestamp(st0)))
-#consumer_key        = 'UEb18HBscs2h9Mhpe6KmsCTbz'
-#consumer_secret     = 'r2ByglOgZm326rHXfAAG4J1SiF9KoEraKzMGKAbZFcBIcvQDye'
-#access_token        = '113384111-05QVgLnhO23Z3cSP7OqjrM8skjzgS96tTncTGecY'
-#access_token_secret = 'if0egdApemMhw64LaLJ8Eh3AOdN5GayOeKFfCdxQitzhQ'
+consumer_key        = 'vGWC2o5YCrw2GPjVZwKVvtY66'
+consumer_secret     = '25c8gSC4IrhBTlK7EqRvaDi3INhHO5KoakkTwVSoCvOVpf7VnD'
+access_token        = '978827522212233217-oZxyfjIpfnnlNlUUuC6NX5OX4qmXxXj'
+access_token_secret = 'BElcQ6yKvleFYFAGq8ZBBgEIeDg7VankMid2GAQt3aonN'
 
-#auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-#auth.set_access_token(access_token, access_token_secret)
-#api = tweepy.API(auth_handler=auth)
-#url = 'https://goo.gl/aUT2E3'
-#api.update_status(status = "NANJCOIN - 売: {}sat 買: {}sat".format(ask, bid))
-#最も直近に売買成立した買い注文、売り注文の注文時刻
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth_handler=auth)
+api.update_status(status = "先頭OB売注文:{} {} sat {:,} NANJ\n先頭OB買注文:{} {} sat {:,} NANJ".format(str(st0), ask, sq0, str(bt0), bid bq0))
